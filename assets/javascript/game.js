@@ -11,38 +11,44 @@ var numberToReach = numberList[Math.floor(Math.random() * numberList.length)];
 	// console.log(numberToReach); //selected number to reach
 var counter = 0;
 //this creates the list of crystal values from 1 through 12
-var crystalValues = [];
+var crystalList = [];
 	for(var i=1; i<=12; i++){
-		crystalValues.push(i);
+		crystalList.push(i);
 	};
-var redCrystalValue = crystalValues[Math.floor(Math.random() * crystalValues.length)];
+
+// crystal values
+var redCrystalValue = crystalList[Math.floor(Math.random() * crystalList.length)];
 
 	console.log(redCrystalValue);
 
-var blueCrystalValue = crystalValues[Math.floor(Math.random() * 
-	crystalValues.length)];
+var blueCrystalValue = crystalList[Math.floor(Math.random() * 
+	crystalList.length)];
 
 	console.log(blueCrystalValue);
 
-var yellowCrystalValue = crystalValues[Math.floor(Math.random() * crystalValues.length)];
+var yellowCrystalValue = crystalList[Math.floor(Math.random() * crystalList.length)];
 
 	console.log(yellowCrystalValue);
 
-var greenCrystalValue = crystalValues[Math.floor(Math.random() * crystalValues.length)];
+var greenCrystalValue = crystalList[Math.floor(Math.random() * crystalList.length)];
 
 	console.log(greenCrystalValue);
+
+// game counters
+var winCounter = 0
+var lossCounter = 0
 
 $('#randomNumber').text(numberToReach);
 
 var redCrystal = $('<img>');
-	redCrystal.attr('data-num', redCrystalValue[i]);
+	redCrystal.attr('data-num', crystalList[i]);
 	redCrystal.attr('src', 'assets/images/red.png');
 	redCrystal.attr('alt', 'red crystal');
 	redCrystal.addClass('crystalImage');
 	$('#redCrystal').append(redCrystal);
 
 var blueCrystal = $('<img>');
-	blueCrystal.attr('data-num', blueCrystalValue[i]);
+	blueCrystal.attr('data-num', crystalList[i]);
 	blueCrystal.attr('src', 'assets/images/blue.png');
 	blueCrystal.attr('alt', 'blue crystal');
 	blueCrystal.addClass('crystalImage');
@@ -50,7 +56,7 @@ var blueCrystal = $('<img>');
 
 
 var yellowCrystal = $('<img>');
-	yellowCrystal.attr('data-num', yellowCrystalValue[i]);
+	yellowCrystal.attr('data-num', crystalList[i]);
 	yellowCrystal.attr('src', 'assets/images/yellow.png');
 	yellowCrystal.attr('alt', 'yellow crystal');
 	yellowCrystal.addClass('crystalImage');
@@ -60,7 +66,7 @@ var yellowCrystal = $('<img>');
 
 
 var greenCrystal = $('<img>');
-	greenCrystal.attr('data-num', greenCrystalValue[i]);
+	greenCrystal.attr('data-num', crystalList[i]);
 	greenCrystal.attr('src', 'assets/images/green.png');
 	greenCrystal.attr('alt', 'green crystal');
 	greenCrystal.addClass('crystalImage');
@@ -72,31 +78,70 @@ $('#redCrystal').on('click', function () {
  	counter = counter + redCrystalValue;
 
  	$('#userTotalScore').text(counter);
+ 	if(counter == numberToReach){
+ 		winCounter++;
+		alert('FANTASTIC! You are a winner! :]');
+		$('#wins').html(winCounter);
+	}else if(counter > numberToReach){
+		lossCounter++;
+		alert('OH DARN! You did not win! :[');
+		$('#losses').html(lossCounter);
+	};
 })
 
 $('#blueCrystal').on('click', function () {
  	counter = counter + blueCrystalValue;
  	$('#userTotalScore').text(counter);
+ 	if(counter == numberToReach){
+ 		winCounter++;
+		alert('FANTASTIC! You are a winner! :]');
+		$('#wins').html(winCounter);
+	}else if(counter > numberToReach){
+		lossCounter++;
+		alert('OH DARN! You did not win! :[');
+		$('#losses').html(lossCounter);
+	};
 })
 $('#yellowCrystal').on('click', function () {
  	counter = counter + yellowCrystalValue;
 
  	$('#userTotalScore').text(counter);
+ 	if(counter == numberToReach){
+ 		winCounter++;
+		alert('FANTASTIC! You are a winner! :]');
+		$('#wins').html(winCounter);
+	}else if(counter > numberToReach){
+		lossCounter++;
+		alert('OH DARN! You did not win! :[');
+		$('#losses').html(lossCounter);
+	};
 })
 $('#greenCrystal').on('click', function () {
  	counter = counter + greenCrystalValue;
 
  	$('#userTotalScore').text(counter);
-
  	if(counter == numberToReach){
- 		
+ 		winCounter++;
 		alert('FANTASTIC! You are a winner! :]');
+		$('#wins').html(winCounter);
 	}else if(counter > numberToReach){
+		lossCounter++;
 		alert('OH DARN! You did not win! :[');
+		$('#losses').html(lossCounter);
+	};
+});
+$('#userTotalScore').text(counter);
+ 	if(counter == numberToReach){
+ 		winCounter++;
+		alert('FANTASTIC! You are a winner! :]');
+		$('#wins').html(winCounter);
+	}else if(counter > numberToReach){
+		lossCounter++;
+		alert('OH DARN! You did not win! :[');
+		$('#losses').html(lossCounter);
 	};
 });
 
 
 
-});
 
