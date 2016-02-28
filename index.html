@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Crystal Collector</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+	<div class="container">
+		<div class="jumbotron">
+			<div class="container">
+				<h1 class="h1"> Crystal Collector! </h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<h3 class="h3">How to Play...
+						<br>
+						<small> You will be given a random number at the start of the game. 
+						<br>
+						There are four crystals below.  By clicking on a crystal you will add a specific amount of points to your total score.
+						<br>
+						You win the game by matching your total score to the random number; you lose the game if your total score goes above the random number.
+						<br>
+						The value of each crystal is hidden from you until you click on it.
+						<br>
+						The value of the crystals will change every time the game restarts.</small>
+						</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-5">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h2 class="panel-title"> Number to Reach 
+						</h2>
+					</div>
+					<div class="panel-body">
+						<p id="randomNumber"> </p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-5 col-md-offset-2">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h2 class="panel-title" id="winLoseAlert"> winner or loser </h2>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="panel-body"> 
+								<strong>Wins:</strong><span id="wins"></span>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="panel-body">
+								<strong>Losses:</strong><span id="losses"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+</body>
+</html>
