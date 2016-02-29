@@ -16,14 +16,14 @@ var lossCounter = 0;
 
 
 
-// function startGame(){
+function startGame(){
 // this creates the list of numbers from 19 through 120 
 	var numberList = [];
 		for(var i=19; i<=120; i++){
 			numberList.push(i);
 		}
 	var numberToReach = numberList[Math.floor(Math.random() * numberList.length)];
-	// console.log(numberToReach); //selected number to reach
+	console.log(numberToReach); //selected number to reach
 	//this creates the list of crystal values from 1 through 12
 	var crystalList = [];
 		for(var i=1; i<=12; i++){
@@ -66,6 +66,7 @@ var lossCounter = 0;
 
 	//this places te numberToReach on the html page
 	$('#randomNumber').text(numberToReach);
+	$('#userTotalScore').text(counter);
 	// assigns random number to crystal values
 	var redCrystalValue = crystalList[Math.floor(Math.random() * crystalList.length)];
 
@@ -84,89 +85,120 @@ var lossCounter = 0;
 
 		console.log(greenCrystalValue);
 
+	counter = 0;
 
-// startGame();
 
-//click events for each crystal
+	$('#wins').text(winCounter);
+	$('#losses').text(lossCounter);
+	$('#userTotalScore').text(counter);
+
+	//click events for each crystal
 
 	$('#redCrystal').on('click', function () {
-	 	counter = counter + redCrystalValue;
-
+      counter = counter + redCrystalValue;
 	 	$('#userTotalScore').text(counter);
-	 	if(counter == numberToReach){
-	 		winCounter++;
+		if(counter == numberToReach){
+		 	winCounter++;
 			alert('FANTASTIC! You are a winner! :]');
 			$('#wins').html(winCounter);
 			$('#randomNumber').text(numberToReach);
+			$('#userTotalScore').text(counter);
+			startGame();
 		}else if(counter > numberToReach){
 			lossCounter++;
 			alert('OH DARN! You did not win! :[');
 			$('#losses').html(lossCounter);
 			$('#randomNumber').text(numberToReach);
-		};
+			$('#userTotalScore').text(counter);
+			startGame();
+		}
 	})
 
 	$('#blueCrystal').on('click', function () {
-	 	counter = counter + blueCrystalValue;
+      counter = counter + blueCrystalValue;
 	 	$('#userTotalScore').text(counter);
-	 	if(counter == numberToReach){
-	 		winCounter++;
+		if(counter == numberToReach){
+		 	winCounter++;
 			alert('FANTASTIC! You are a winner! :]');
 			$('#wins').html(winCounter);
 			$('#randomNumber').text(numberToReach);
+			$('#userTotalScore').text(counter);
+			startGame();
 		}else if(counter > numberToReach){
 			lossCounter++;
 			alert('OH DARN! You did not win! :[');
 			$('#losses').html(lossCounter);
 			$('#randomNumber').text(numberToReach);
-		};
+			$('#userTotalScore').text(counter);
+			startGame();
+		}
 	})
 	$('#yellowCrystal').on('click', function () {
-	 	counter = counter + yellowCrystalValue;
-
+      counter = counter + yellowCrystalValue;
 	 	$('#userTotalScore').text(counter);
-	 	if(counter == numberToReach){
-	 		winCounter++;
+		if(counter == numberToReach){
+		 	winCounter++;
 			alert('FANTASTIC! You are a winner! :]');
 			$('#wins').html(winCounter);
 			$('#randomNumber').text(numberToReach);
+			$('#userTotalScore').text(counter);
+			startGame();
 		}else if(counter > numberToReach){
 			lossCounter++;
 			alert('OH DARN! You did not win! :[');
 			$('#losses').html(lossCounter);
 			$('#randomNumber').text(numberToReach);
-		};
+			$('#userTotalScore').text(counter);
+			startGame();
+		}
 	})
 	$('#greenCrystal').on('click', function () {
-	 	counter = counter + greenCrystalValue;
+      counter = counter + greenCrystalValue;
 
 	 	$('#userTotalScore').text(counter);
 	 	if(counter == numberToReach){
-	 		winCounter++;
+		 	winCounter++;
 			alert('FANTASTIC! You are a winner! :]');
 			$('#wins').html(winCounter);
 			$('#randomNumber').text(numberToReach);
+			$('#userTotalScore').text(counter);
+			startGame();
 		}else if(counter > numberToReach){
 			lossCounter++;
 			alert('OH DARN! You did not win! :[');
 			$('#losses').html(lossCounter);
 			$('#randomNumber').text(numberToReach);
-		};
+			$('#userTotalScore').text(counter);
+			startGame();
+		}
 	})
-	$('#userTotalScore').text(counter);
-	 	if(counter == numberToReach){
-	 		winCounter++;
-			alert('FANTASTIC! You are a winner! :]');
-			$('#wins').html(winCounter);
-			$('#randomNumber').text(numberToReach);
-		}else if(counter > numberToReach){
-			lossCounter++;
-			alert('OH DARN! You did not win! :[');
-			$('#losses').html(lossCounter);
-			$('#randomNumber').text(numberToReach);
-		};
-	// });
-// });
+ }
+
+function roundComplete () {
+	console.log("Wins Count: " +winCounter+ "| Loss Count: " +lossCounter);
+
+	if(counter == numberToReach){
+	 	winCounter++;
+		alert('FANTASTIC! You are a winner! :]');
+		$('#wins').html(winCounter);
+		$('#randomNumber').text(numberToReach);
+
+		startGame();
+	}else if(counter > numberToReach){
+		lossCounter++;
+		alert('OH DARN! You did not win! :[');
+		$('#losses').html(lossCounter);
+		$('#randomNumber').text(numberToReach);
+		startGame();
+	}
+}
+
+
+startGame();
+
+
+// roundComplete();
+
 
 
 
