@@ -10,27 +10,45 @@ body {
 	background-color: #eaeaea;
 	text-align: center;
 }
-small {
+#info {
 	color: #666666;
+	font-size: 16px;
+	font-weight: 10;
 }
-.col-md-3{
-	float: left;
 
-}
 .crystalHolder {
-	background-color: transparent;
+	background-color: none;
 }
-.crystals {
-	background-color: transparent;
-}
+
 .crystalImage {
 	display: inline-block;
+	width: 175px;
+	height: 175px;
+	margin-bottom: 25px;
+	background-color: transparent;
 }
-.panel-heading{
-	background-color: #7ec4c9;
-}
+
 .center-block {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
+}
+p, h2, strong, span{
+	text-align: center;
+}
+p, strong {
+	font-size: 20px;
+}
+#wins, #losses {
+	text-align: center;
+	font-size: 20px;
+}
+#winLoseAlert {
+	border-right: 5px;
+	border-right-color: #aeaeae;
+	border-right-style: solid;
+}
+.panel-heading {
+	background-color: #f4d163;
+	border-color: #666666;
 }
