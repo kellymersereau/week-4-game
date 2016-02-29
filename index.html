@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Crystal Collector</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+<!-- 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css"> -->
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
@@ -17,7 +17,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="panel panel-default">
-					<div class="panel-body">
+					<div class="panel-body"  id="howToPlay">
 						<h3 class="h3">How to Play...
 						<br>
 						<small> You will be given a random number at the start of the game. 
@@ -37,7 +37,7 @@
 		<div class="row">
 			<div class="col-md-4">
 				<div class="panel panel-default">
-					<div class="panel-heading">
+					<div class="panel-heading" class="topHeading">
 						<h2 class="panel-title"> Number to Reach 
 						</h2>
 					</div>
@@ -48,8 +48,8 @@
 			</div>
 			<div class="col-md-4">
 				<div class="panel panel-default">
-					<div class="panel-heading">
-						<h2 class="panel-title" id="winLoseAlert"> winner or loser </h2>
+					<div class="panel-heading" class="topHeading">
+						<h2 class="panel-title" id="winLoseAlert"> </h2>
 					</div>
 					<div class="row">
 						<div class="col-md-6">
@@ -67,7 +67,7 @@
 			</div>
 			<div class="col-md-4">
 				<div class="panel panel-default">
-					<div class="panel-heading">
+					<div class="panel-heading" class="topHeading">
 						<h2 class="panel-title"> Your Total Score is:</h2>
 					</div>
 					<div class="panel-body">
@@ -77,21 +77,13 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-12">
-				<div class="panel panel-default">
-					<div class="panel-body">
-						<div class="row">
-							<div class="col-md-3" id="redCrystal" class="crystals">
-							</div>
-							<div class="col-md-3" id="blueCrystal" class="crystals">
-							</div>
-							<div class="col-md-3" id="greenCrystal" class="crystals">
-							</div>
-							<div class="col-md-3" id="yellowCrystal" class="crystals">
-							</div>
-						</div>
-					</div>
-				</div>
+			<div class="col-md-3" id="redCrystal" class="crystals" class="center-block">
+			</div>
+			<div class="col-md-3" id="blueCrystal" class="crystals" class="center-block">
+			</div>
+			<div class="col-md-3" id="greenCrystal" class="crystals" class="center-block">
+			</div>
+			<div class="col-md-3" id="yellowCrystal" class="crystals" class="center-block">
 			</div>
 		</div>
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>

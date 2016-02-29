@@ -1,0 +1,36 @@
+body {
+	background-image: url("../images/background_img.jpg");
+}
+.jumbotron {
+	background-color: #666666;
+	color: white;
+	text-align: center;
+}
+#howToPlay {
+	background-color: #eaeaea;
+	text-align: center;
+}
+small {
+	color: #666666;
+}
+.col-md-3{
+	float: left;
+
+}
+.crystalHolder {
+	background-color: transparent;
+}
+.crystals {
+	background-color: transparent;
+}
+.crystalImage {
+	display: inline-block;
+}
+.panel-heading{
+	background-color: #7ec4c9;
+}
+.center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
