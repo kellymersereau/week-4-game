@@ -4,6 +4,10 @@
 var numberList = []; //list of numbers to get numberToReach from
 var numberToReach = "";
 // var crystalList = [];
+var redCrystal = "";
+var blueCrystal = "";
+var greenCrystal = "";
+var yellowCrystal = "";
 var redCrystalValue = "";
 var blueCrystalValue = "";
 var greenCrystalValue = "";
@@ -58,15 +62,47 @@ function createCrystals(){
 
 }
 
-
-function startGame(){
-
-	var numberList = [];
+function newCrystals(){
+	counter = 0;
+	//this creates the array of numbers to be used to pick the numberToReach
+	numberList = [];
 		for(var i=19; i<=120; i++){
 			numberList.push(i);
 		}
-	var numberToReach = numberList[Math.floor(Math.random() * numberList.length)];
+	numberToReach = numberList[Math.floor(Math.random() * numberList.length)];
 	console.log(numberToReach); //selected number to reach
+
+	//this places the numberToReach on the html page
+	$('#randomNumber').text(numberToReach);
+
+	redCrystalValue = crystalList[Math.floor(Math.random() * crystalList.length)];
+	$('#redCrystalValue').text(redCrystalValue);
+
+		console.log(redCrystalValue);
+
+	blueCrystalValue = crystalList[Math.floor(Math.random() * 
+		crystalList.length)];
+	$('#blueCrystalValue').text(blueCrystalValue);
+		console.log(blueCrystalValue);
+
+	greenCrystalValue = crystalList[Math.floor(Math.random() * crystalList.length)];
+	$('#greenCrystalValue').text(greenCrystalValue);
+		console.log(greenCrystalValue);
+
+	yellowCrystalValue = crystalList[Math.floor(Math.random() * crystalList.length)];
+	$('#yellowCrystalValue').text(yellowCrystalValue);
+		console.log(yellowCrystalValue);
+}
+
+function startGame(){
+	counter = 0;
+	//this creates the array of numbers to be used to pick the numberToReach
+	// numberList = [];
+	// 	for(var i=19; i<=120; i++){
+	// 		numberList.push(i);
+	// 	}
+	// numberToReach = numberList[Math.floor(Math.random() * numberList.length)];
+	// console.log(numberToReach); //selected number to reach
 
 	//this places the numberToReach on the html page
 	$('#randomNumber').text(numberToReach);
@@ -74,120 +110,128 @@ function startGame(){
 
 	//this assigns the counter to the userTotalScore on the html page
 	$('#userTotalScore').text(0);
+
 	// assigns random number to crystal values
-	var redCrystalValue = crystalList[Math.floor(Math.random() * crystalList.length)];
-	$('#redCrystalValue').text(redCrystalValue);
+	// redCrystalValue = crystalList[Math.floor(Math.random() * crystalList.length)];
+	// $('#redCrystalValue').text(redCrystalValue);
 
-		// console.log(redCrystalValue);
+	// 	console.log(redCrystalValue);
 
-	var blueCrystalValue = crystalList[Math.floor(Math.random() * 
-		crystalList.length)];
-	$('#blueCrystalValue').text(blueCrystalValue);
-		// console.log(blueCrystalValue);
+	// blueCrystalValue = crystalList[Math.floor(Math.random() * 
+	// 	crystalList.length)];
+	// $('#blueCrystalValue').text(blueCrystalValue);
+	// 	console.log(blueCrystalValue);
 
-	var greenCrystalValue = crystalList[Math.floor(Math.random() * crystalList.length)];
-	$('#greenCrystalValue').text(greenCrystalValue);
-		// console.log(greenCrystalValue);
+	// greenCrystalValue = crystalList[Math.floor(Math.random() * crystalList.length)];
+	// $('#greenCrystalValue').text(greenCrystalValue);
+	// 	console.log(greenCrystalValue);
 
-	var yellowCrystalValue = crystalList[Math.floor(Math.random() * crystalList.length)];
-	$('#yellowCrystalValue').text(yellowCrystalValue);
-		// console.log(yellowCrystalValue);
+	// yellowCrystalValue = crystalList[Math.floor(Math.random() * crystalList.length)];
+	// $('#yellowCrystalValue').text(yellowCrystalValue);
+	// 	console.log(yellowCrystalValue);
+	//this sets the counter to 0;
+	// counter = 0;
 
-	counter = 0;
-
-
+	//this puts the winCounter, lossCounter & counter values in their correct locations on the page
 	$('#wins').text(winCounter);
 	$('#losses').text(lossCounter);
 	$('#userTotalScore').text(counter);
-
+}
 	//click events for each crystal
 
 	$('#redCrystal').on('click', function () {
       counter = counter + redCrystalValue;
 	 	$('#userTotalScore').text(counter);
-		if(counter == numberToReach){
+		if(counter === numberToReach){
 		 	winCounter++;
 			alert('FANTASTIC! You are a winner! :]');
 			$('#wins').html(winCounter);
 			$('#randomNumber').text(numberToReach);
-			counter=0;
+			counter = 0;
 			$('#userTotalScore').text(counter);
-			startGame();
+			newCrystals();
 		}else if(counter > numberToReach){
 			lossCounter++;
 			alert('OH DARN! You did not win! :[');
 			$('#losses').html(lossCounter);
 			$('#randomNumber').text(numberToReach);
-			counter=0;
+			counter = 0;
 			$('#userTotalScore').text(counter);
-			startGame();
+			newCrystals();
 		}
 	})
 
 	$('#blueCrystal').on('click', function () {
       counter = counter + blueCrystalValue;
 	 	$('#userTotalScore').text(counter);
-		if(counter == numberToReach){
+		if(counter === numberToReach){
 		 	winCounter++;
 			alert('FANTASTIC! You are a winner! :]');
 			$('#wins').html(winCounter);
 			$('#randomNumber').text(numberToReach);
-			// $('#userTotalScore').text(counter);
-			startGame();
+			counter = 0;
+			$('#userTotalScore').text(counter);
+			newCrystals();
 		}else if(counter > numberToReach){
 			lossCounter++;
 			alert('OH DARN! You did not win! :[');
 			$('#losses').html(lossCounter);
 			$('#randomNumber').text(numberToReach);
-			// $('#userTotalScore').text(counter);
-			startGame();
+			counter = 0;
+			$('#userTotalScore').text(counter);
+			newCrystals();
 		}
 	})
 	$('#yellowCrystal').on('click', function () {
       counter = counter + yellowCrystalValue;
 	 	$('#userTotalScore').text(counter);
-		if(counter == numberToReach){
+		if(counter === numberToReach){
 		 	winCounter++;
 			alert('FANTASTIC! You are a winner! :]');
 			$('#wins').html(winCounter);
 			$('#randomNumber').text(numberToReach);
-			// $('#userTotalScore').text(counter);
-			startGame();
+			counter = 0;
+			$('#userTotalScore').text(counter);
+			newCrystals();
 		}else if(counter > numberToReach){
 			lossCounter++;
 			alert('OH DARN! You did not win! :[');
 			$('#losses').html(lossCounter);
 			$('#randomNumber').text(numberToReach);
-			// $('#userTotalScore').text(counter);
-			startGame();
+			counter = 0;
+			$('#userTotalScore').text(counter);
+			newCrystals();
 		}
 	})
 	$('#greenCrystal').on('click', function () {
       counter = counter + greenCrystalValue;
 
 	 	$('#userTotalScore').text(counter);
-	 	if(counter == numberToReach){
+	 	if(counter === numberToReach){
 		 	winCounter++;
 			alert('FANTASTIC! You are a winner! :]');
 			$('#wins').html(winCounter);
 			$('#randomNumber').text(numberToReach);
-			// $('#userTotalScore').text(counter);
-			startGame();
+			counter = 0;
+			$('#userTotalScore').text(counter);
+			newCrystals();
 		}else if(counter > numberToReach){
 			lossCounter++;
 			alert('OH DARN! You did not win! :[');
 			$('#losses').html(lossCounter);
 			$('#randomNumber').text(numberToReach);
-			// $('#userTotalScore').text(counter);
-			startGame();
+			counter = 0;
+			$('#userTotalScore').text(counter);
+			newCrystals();
 		}
 	})
-}
+
  
 
 
 
 createCrystals();
+newCrystals();
 startGame();
 
 
